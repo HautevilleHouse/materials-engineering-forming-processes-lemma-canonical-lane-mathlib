@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import MaterialsEngineeringFormingProcessesLemmaCanonicalLaneLean.Crystallography
+import MaterialsEngineeringFormingProcessesLemmaCanonicalLaneLean.PhaseDiagrams
+import MaterialsEngineeringFormingProcessesLemmaCanonicalLaneLean.Elasticity
+import MaterialsEngineeringFormingProcessesLemmaCanonicalLaneLean.FractureMechanics
+import MaterialsEngineeringFormingProcessesLemmaCanonicalLaneLean.FormingProcesses
+
+namespace HautevilleHouse
+namespace MaterialsEngineeringFormingProcessesLemmaCanonicalLaneLean
+
+def ConstrainedMaterialsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_materials_endgame (A : AdmissibleClass) : ConstrainedMaterialsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end MaterialsEngineeringFormingProcessesLemmaCanonicalLaneLean
+end HautevilleHouse
